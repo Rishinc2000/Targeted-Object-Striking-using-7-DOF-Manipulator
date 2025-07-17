@@ -68,7 +68,7 @@
 <section class="hero teaser">
   <div class="hero-body">
     <div class="container is-max-desktop has-text-centered">
-      <video poster="static/images/demo_poster.png" id="demo-video" controls muted loop height="400">
+      <video poster="static/images/demo_poster.png" id="demo-video" controls muted autoplay loop playsinline height="400">
         <source src="static/videos/Demo_video.mp4" type="video/mp4">
       </video>
       <h3 class="subtitle mt-4">Watch our robot accurately strike and place objects using learned residual corrections.</h3>
@@ -81,7 +81,20 @@
   <div class="container is-max-desktop has-text-centered">
     <h2 class="title is-3">Abstract</h2>
     <div class="content has-text-justified">
-      <p>We present a hybrid framework combining MuJoCo-based inverse dynamics with a data-driven residual model to compensate unmodeled sim-to-real discrepancies for a 7-DoF striking manipulator. Experiments on a uFactory xArm demonstrate an average error reduction from 9.12 cm to 1.68 cm (81.6% improvement).</p>
+      <p>As robotic manipulators start performing more daily tasks, striking
+        can be a useful method for transporting objects because it sig
+       nificantly increases the reachable workspace. However, striking
+        methods are underexplored compared to pick-and-place because
+        of the difficulty of modeling and executing striking interactions.
+        In this paper, we develop an algorithm for striking objects so that
+        they stop at a target location. We start with an optimizer in simula
+       tion that solves for the striking velocity given the relative target
+        position, and perform system identification to set the simulation
+        parameters. However, real-world striking with this model does not
+        have high accuracy because it is unclear which parameters should
+        be considered for identification in practice. Therefore, we finally
+        develop a residual learning approach that subsumes all unmodeled
+        differences between the simulation and the real-world environment into action, that is, striking velocity residuals.</p>
     </div>
   </div>
 </section>
@@ -91,6 +104,11 @@
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-4 has-text-centered">Key Results</h2>
+      <div class="content has-text-justified">
+        <p>We observe that the residual learning model reduces the
+          mean error in stopping position from an average of 9.12 cm to 1.68
+          cm, or an 81.6% reduction, compared to the baseline system identification approach</p>
+      </div>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item">
           <img src="static/images/accuracy_plot.png" alt="Error comparison plot" />
