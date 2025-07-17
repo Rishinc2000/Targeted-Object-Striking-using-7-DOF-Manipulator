@@ -1,98 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Targeted Object Striking for a 7-DoF Manipulator</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners -->
+  <meta name="description" content="Hybrid sim-to-real striking manipulation on a 7-DoF manipulator using residual learning to achieve precise object placement.">
+  <meta property="og:title" content="Targeted Object Striking for a 7-DoF Manipulator"/>
+  <meta property="og:description" content="A Residual Learning Approach achieving 1.68 cm average error on a uFactory xArm 7-DOF manipulator."/>
+  <meta property="og:url" content="https://your-username.github.io/Targeted-Object-Striking-using-7-DOF-Manipulator/"/>
+  <meta property="og:image" content="static/images/accuracy_plot.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="Targeted Object Striking for a 7-DoF Manipulator">
+  <meta name="twitter:description" content="Residual learning for sim-to-real non-prehensile striking manipulation.">
+  <meta name="twitter:image" content="static/images/accuracy_plot.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="keywords" content="robotics, non-prehensile manipulation, residual learning, sim-to-real, xArm, MuJoCo">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Targeted Object Striking – Residual Learning</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
 </head>
 <body>
-  <!-- Header / Hero -->
-  <header class="hero">
-    <h1>Targeted Object Striking for a 7-DoF Manipulator</h1>
-    <p class="subtitle">A Residual Learning Approach</p>
-    <p class="authors">
-      Priyansh Sinha<sup>1</sup>, Rishin Chakraborty<sup>1</sup>, Samarth Brahmbhatt<sup>2</sup>, Nagamanikandan Govindan<sup>1</sup>
-    </p>
-    <p class="affiliations">
-      <sup>1</sup>International Institute of Information Technology, Hyderabad<br>
-      <sup>2</sup>Independent Researcher
-    </p>
-    <p class="date">03 July 2025</p>
-  </header>
 
-  <!-- Abstract -->
-  <section id="abstract">
-    <h2>Abstract</h2>
-    <p>
-      We introduce a hybrid framework combining a physics-based inverse dynamics solver with a data-driven residual learning model to perform precision striking manipulation on a 7-DoF robot arm. Our method achieves an average real-world positioning error of 1.68 cm—an 81.6% improvement over traditional system identification techniques—demonstrating robust sim-to-real transfer for high-speed non-prehensile tasks.
-    </p>
-    <p>
-      <a href="Residual_learning_of_striking_manipulation.pdf" target="_blank">Download Full Paper (PDF)</a><br>
-      <a href="AIR2025_Poster.pptx" target="_blank">Download Poster (PPTX)</a>
-    </p>
-  </section>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <h1 class="title is-1 publication-title">Targeted Object Striking for a 7-DoF Manipulator</h1>
+      <h2 class="subtitle is-3 publication-subtitle">A Residual Learning Approach</h2>
+      <div class="is-size-5 publication-authors">
+        <span class="author-block"><a href="https://research.iiit.ac.in/priyansh" target="_blank">Priyansh Sinha</a><sup>1,*</sup>,</span>
+        <span class="author-block"><a href="https://research.iiit.ac.in/rishin" target="_blank">Rishin Chakraborty</a><sup>1,*</sup>,</span>
+        <span class="author-block"><a href="https://samarthbrahmbhatt.com" target="_blank">Samarth Brahmbhatt</a><sup>2</sup>,</span>
+        <span class="author-block"><a href="https://research.iiit.ac.in/nagamanikandan" target="_blank">Nagamanikandan Govindan</a><sup>1</sup></span>
+      </div>
+      <div class="is-size-5 publication-affiliation">
+        <span class="author-block"><sup>1</sup>International Institute of Information Technology, Hyderabad</span><br>
+        <span class="author-block"><sup>2</sup>Independent Researcher, Seattle, USA</span><br>
+        <small><sup>*</sup>Equal contribution</small>
+      </div>
+      <div class="publication-links mt-3">
+        <a href="static/pdfs/Residual_learning_of_striking_manipulation.pdf" target="_blank" class="button is-rounded is-dark"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span></a>
+        <a href="static/pdfs/AIR2025_Poster.pdf" target="_blank" class="button is-rounded is-dark"><span class="icon"><i class="fas fa-file-powerpoint"></i></span><span>Poster</span></a>
+        <a href="https://github.com/your-username/Targeted-Object-Striking-using-7-DOF-Manipulator" target="_blank" class="button is-rounded is-dark"><span class="icon"><i class="fab fa-github"></i></span><span>Code</span></a>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- Introduction & Motivation -->
-  <section id="introduction">
-    <h2>1. Introduction & Motivation</h2>
-    <p>
-      While robotic grasping is ubiquitous, non-prehensile actions such as striking expand the reachable workspace by leveraging high-velocity impacts. Applications include rapid sorting in logistics, workspace clearing in manufacturing, and service robotics tasks. The core challenge lies in accurately modeling impact dynamics under real-world uncertainties.</n>
-  </section>
+<!-- Teaser Video -->
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <video poster="static/images/demo_poster.png" id="demo-video" controls muted loop height="400">
+        <source src="static/videos/demo_video.mp4" type="video/mp4">
+      </video>
+      <h3 class="subtitle mt-4">Watch our robot accurately strike and place objects using learned residual corrections.</h3>
+    </div>
+  </div>
+</section>
 
-  <!-- Methodology -->
-  <section id="methodology">
-    <h2>2. Methodology</h2>
-    <h3>2.1 Inverse Dynamics Solver</h3>
-    <p>
-      We use MuJoCo and NLopt to compute ideal striking velocity <em>v<sub>sim</sub></em> and angle <em>θ<sub>sim</sub></em> for a given initial and target position.</p>
-    <h3>2.2 Residual Learning</h3>
-    <p>
-      A neural network (MLP) is trained on 500 hardware strikes to predict residuals Δv and Δθ that correct for unmodeled sim-to-real discrepancies, using inputs: path lengths (P<sub>x</sub>, P<sub>y</sub>), v<sub>sim</sub>, θ<sub>sim</sub>.</p>
-    <h3>2.3 Hardware Execution</h3>
-    <p>
-      Final commands: v<sub>real</sub> = v<sub>sim</sub> + Δv, θ<sub>real</sub> = θ<sub>sim</sub> + Δθ, executed on a uFactory xArm 7-DOF manipulator with a custom low-level controller.</p>
-  </section>
+<!-- Abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop has-text-centered">
+    <h2 class="title is-3">Abstract</h2>
+    <div class="content has-text-justified">
+      <p>We present a hybrid framework combining MuJoCo-based inverse dynamics with a data-driven residual model to compensate unmodeled sim-to-real discrepancies for a 7-DoF striking manipulator. Experiments on a uFactory xArm demonstrate an average error reduction from 9.12 cm to 1.68 cm (81.6% improvement).</p>
+    </div>
+  </div>
+</section>
 
-  <!-- Results & Findings -->
-  <section id="results">
-    <h2>3. Results & Key Findings</h2>
-    <ul>
-      <li><strong>Accuracy Improvement:</strong> Residual learning reduces mean error from 9.12 cm to 1.68 cm (81.6% reduction).</li>
-      <li><strong>Generalization:</strong> On a second object (cube), error reduced from 10.02 cm to 4.36 cm.</li>
-    </ul>
-    <figure>
-      <img src="assets/accuracy_plot.png" alt="Error comparison plot">
-      <figcaption>Error ellipses comparing system identification vs. residual learning.</figcaption>
-    </figure>
-  </section>
+<!-- Results Carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-4 has-text-centered">Key Results</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <img src="static/images/accuracy_plot.png" alt="Error comparison plot" />
+          <h4 class="subtitle has-text-centered">Error Ellipses: System ID vs. Residual Learning</h4>
+        </div>
+        <div class="item">
+          <img src="static/images/generalization_plot.png" alt="Generalization to cube" />
+          <h4 class="subtitle has-text-centered">Generalization: Cube Object Results</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- Conclusion & Future Work -->
-  <section id="conclusion">
-    <h2>4. Conclusion & Future Work</h2>
-    <p>
-      We present a robust sim-to-real pipeline that leverages residual learning to compensate for unmodeled dynamics in striking manipulation tasks. Future work includes dynamic adaptation for arbitrary object shapes and on-the-fly residual tuning without manual data collection.</p>
-  </section>
+<!-- Video Presentation -->
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <h2 class="title is-3">Video Presentation</h2>
+      <div class="publication-video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- Media Demo -->
-  <section id="demo">
-    <h2>5. Demo Video</h2>
-    <video controls width="640">
-      <source src="demo_video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <p>Add AI voice-over narration via Clipchamp or Murf.ai for automated, high-quality audio explanation.</p>
-  </section>
+<!-- Poster Embed -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <h2 class="title is-3">Poster</h2>
+      <iframe src="static/pdfs/AIR2025_Poster.pdf" width="80%" height="600"></iframe>
+    </div>
+  </div>
+</section>
 
-  <!-- Contact -->
-  <footer>
-    <h2>Contact</h2>
-    <p>
-      <strong>Priyansh Sinha</strong>: priyansh.sinha@research.iiit.ac.in<br>
-      <strong>Rishin Chakraborty</strong>: rishin.chakraborty@research.iiit.ac.in<br>
-      <strong>Samarth Brahmbhatt</strong>: samarth.robo@gmail.com<br>
-      <strong>Nagamanikandan Govindan</strong>: nagamanikandan.g@iiit.ac.in
-    </p>
-  </footer>
+<!-- BibTeX -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">BibTeX</h2>
+    <pre><code>@inproceedings{Sinha2025Residual,
+  title={Targeted Object Striking for a 7-DoF Manipulator: A Residual Learning Approach},
+  author={Sinha, Priyansh and Chakraborty, Rishin and Brahmbhatt, Samarth and Govindan, Nagamanikandan},
+  booktitle={Proceedings of AIR '25},
+  year={2025},
+  organization={ACM}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>. Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.</p>
+  </div>
+</footer>
+
 </body>
 </html>
